@@ -3,43 +3,14 @@ package com.nonursis.BookManagementSystem;
 
 import java.util.Date;
 
-public class Book {
-    private String number;
-    private String name;
-    private Date date;  // entry date
+public class Book extends CatalogItem{
     private String Author;
     private int numberOfPages;
 
-    public Book(String number, String name, Date date, String author, int numberOfPages) {
-        this.number = number;
-        this.name = name;
-        this.date = date;
+    public Book(String code, String title, Date publishDate, String author, int numberOfPages) {
+        super(code, title, publishDate);
         Author = author;
         this.numberOfPages = numberOfPages;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public String getAuthor() {
@@ -61,9 +32,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "number='" + number + '\'' +
-                ", name='" + name + '\'' +
-                ", date=" + date +
+                super.toString() +
                 ", Author='" + Author + '\'' +
                 ", numberOfPages=" + numberOfPages +
                 '}';
